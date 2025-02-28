@@ -19,6 +19,7 @@ release = '0.1'
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
+    'myst_parser',  # support for MyST markdown
     'sphinx.ext.duration',
     'sphinx.ext.doctest',  # include code snippets in the documentation
     'sphinx.ext.autodoc',  # include docstrings in the documentation
@@ -33,6 +34,11 @@ extensions = [
 templates_path = ['_templates']
 exclude_patterns = []
 
+source_suffix = {
+    '.rst': 'restructuredtext',
+    '.txt': 'markdown',
+    '.md': 'markdown',
+}
 
 
 # -- Options for HTML output -------------------------------------------------
