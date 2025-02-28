@@ -10,32 +10,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
+      # - name: Check out repository
+      #   uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
+      # - name: Set up Python
+      #   uses: actions/setup-python@v4
+      #   with:
+      #     python-version: '3.x'
 
       # - name: Install dependencies
       #   run: |
       #     python -m pip install --upgrade pip
       #     pip install sphinx furo sphinx-rtd-theme
-
-      - name: Set up Virtual Environment
-        run: |
-            python -m venv venv
-            source venv/bin/activate
-            pip install sphinx sphinx_rtd_theme
      
-      - name: Check Installed Packages
-        run: pip list
+      # - name: Check Installed Packages
+      #   run: pip list
 
-      - name: Build Sphinx documentation
-        uses: ammaraskar/sphinx-action@master
+      - uses: actions/checkout@v1
+      - uses: ammaraskar/sphinx-action@master
         with:
-          docs-folder: "docs"
+          docs-folder: "docs/"
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
