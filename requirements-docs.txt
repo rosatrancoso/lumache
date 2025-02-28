@@ -1,3 +1,4 @@
 sphinx
+shpinx-rtd-theme
 sphinx_rtd_theme
 
